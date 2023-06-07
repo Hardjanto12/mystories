@@ -21,7 +21,7 @@ class StorySeeder extends Seeder
         Story::truncate();
 
         // Create sample stories
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             Story::create([
                 'title' => $faker->sentence,
                 'content' => $faker->paragraph,

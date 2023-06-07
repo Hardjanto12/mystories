@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StoryController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,16 @@ Route::get('/', function () {
     return redirect('/story');
 });
 
-Route::get('/story', function () {
-    return view('welcome');
+Route::get('/story', [StoryController::class, 'index']);
+Route::get('/story/{id}', [StoryController::class, 'show']);
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/{id}', [CategoryController::class, 'show']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });

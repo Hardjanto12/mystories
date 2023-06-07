@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Story;
-use App\Http\Requests\StoreStoryRequest;
-use App\Http\Requests\UpdateStoryRequest;
+use Illuminate\Http\Request;
 
-
-class StoryController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Story::paginate(10);
-        return view('stories.index')->with('data', $data);
+        return view('dashboard.index');
     }
 
     /**
@@ -29,7 +25,7 @@ class StoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStoryRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -37,16 +33,15 @@ class StoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(string $id)
     {
-        $data = Story::where('id', $id)->first();
-        return view('story.index')->with('data', $data);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Story $story)
+    public function edit(string $id)
     {
         //
     }
@@ -54,7 +49,7 @@ class StoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStoryRequest $request, Story $story)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -62,7 +57,7 @@ class StoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Story $story)
+    public function destroy(string $id)
     {
         //
     }

@@ -5,9 +5,22 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",
   ],
+      
   theme: {
-    extend: {},
+    container: {
+      center: true,
+    },
+    extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+        'lato': ['Lato'],
+        'garamond': ['Garamond'],
+        'esteban': ['Esteban']
+    }
+    },
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }
 
